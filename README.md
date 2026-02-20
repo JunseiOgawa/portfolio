@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Junsei Ogawa — Portfolio
 
-## Getting Started
+Windows 95 風デザインのポートフォリオサイト。
 
-First, run the development server:
+## 技術スタック
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS + カスタム Windows 95 スタイル
+- **Deploy:** Vercel
+
+## ページ構成
+
+| パス | 内容 |
+|------|------|
+| `/` | デスクトップ (ホーム) |
+| `/about` | プロフィール |
+| `/projects` | プロジェクト一覧 |
+| `/skills` | スキル・技術スタック |
+
+## ローカル開発
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000 で確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Vercel へのデプロイ手順
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. フォルダを GitHub にプッシュ
+   ```bash
+   git add .
+   git commit -m "initial portfolio"
+   git remote add origin https://github.com/JunseiOgawa/<repo-name>.git
+   git push -u origin main
+   ```
 
-## Learn More
+2. [vercel.com](https://vercel.com) にアクセスしてログイン
 
-To learn more about Next.js, take a look at the following resources:
+3. **"New Project"** → GitHubリポジトリを選択 → **"Deploy"**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Framework は **Next.js** が自動検出されます。設定変更不要。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## カスタマイズ
 
-## Deploy on Vercel
+- [app/about/page.tsx](app/about/page.tsx) — プロフィール情報
+- [app/projects/page.tsx](app/projects/page.tsx) — プロジェクト一覧
+- [app/skills/page.tsx](app/skills/page.tsx) — スキルレベル
+- [components/Taskbar.tsx](components/Taskbar.tsx) — ナビゲーション
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
