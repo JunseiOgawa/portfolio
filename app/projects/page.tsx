@@ -10,9 +10,9 @@ const projects = [
     tech: ["React Native", "Expo", "Supabase", "TypeScript"],
     description:
       "写真を自動で整理・タグ付けするスマホアプリ。Google Vision APIを使った写真の自動タグ付けと、Supabaseによるクラウド同期機能を備えます。",
-    status: "開発中",
-    statusColor: "#ff8800",
-    github: "https://github.com/JunseiOgawa",
+    status: "開発終了",
+    statusColor: "#808080",
+    github: "",
   },
   {
     id: "vdi-solid",
@@ -94,7 +94,7 @@ export default function ProjectsPage() {
                   </div>
                   <div
                     style={{
-                      background: project.statusColor === "#008000" ? "#008000" : "#ff8800",
+                      background: project.statusColor,
                       color: "white",
                       padding: "1px 6px",
                       fontSize: 10,
@@ -129,11 +129,16 @@ export default function ProjectsPage() {
 
                 {/* Footer buttons */}
                 <div style={{ display: "flex", gap: 8 }}>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <button className="win95-btn" style={{ padding: "3px 10px", minWidth: 0, fontSize: 11 }}>
-                      🐱 GitHub
-                    </button>
-                  </a>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <button className="win95-btn" style={{ padding: "3px 10px", minWidth: 0, fontSize: 11 }}>
+                        🐱 GitHub
+                      </button>
+                    </a>
+                  )}
+                  {!project.github && (
+                    <span style={{ fontSize: 10, color: "#808080", padding: "3px 0" }}>リポジトリ非公開</span>
+                  )}
                 </div>
               </div>
             ))}
